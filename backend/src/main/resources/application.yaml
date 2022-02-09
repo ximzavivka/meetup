@@ -1,0 +1,18 @@
+server:
+  port: 9858
+spring:
+  application:
+    develop: true
+  datasource:
+    username: backend
+    password: postgres-password
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:demo_netology;MODE=PostgreSQL;INIT=CREATE SCHEMA IF NOT EXISTS backend\;
+  liquibase.default-schema: backend
+  jpa:
+    show-sql: false
+    properties.hibernate.default_schema: backend
+    open-in-view: false
+    hibernate.ddl-auto: validate
+    properties.hibernate:
+      enable_lazy_load_no_trans: true
